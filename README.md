@@ -1,1 +1,5 @@
-# Robustic API
+# Robustic API(Dashboard)
+## Installation
+```bash
+:
+```
