@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Store;
+use Illuminate\Http\Request;
 use App\Http\Requests\StoreStoreRequest;
 use App\Http\Requests\UpdateStoreRequest;
-use App\Models\Store;
+use App\Services\StoreService;
 
 class StoreController extends Controller
 {
@@ -19,9 +21,9 @@ class StoreController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreStoreRequest $request)
+    public function store(StoreStoreRequest $request, StoreService $store)
     {
-        //
+
     }
 
     /**
