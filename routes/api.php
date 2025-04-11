@@ -19,6 +19,6 @@ Route::post('/tokens/create', function (Request $request) {
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::resource('product', ProductController::class);
+    Route::resource('customers', StoreController::class);
     Route::resource('store', StoreController::class);
-    
 });
