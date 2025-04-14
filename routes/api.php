@@ -1,10 +1,12 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProductController;
 use App\Http\Controllers\StoreController;
-use App\Models\User;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CustomersController;
+
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -18,7 +20,9 @@ Route::post('/tokens/create', function (Request $request) {
 });
 
 Route::middleware('auth:sanctum')->group(function () {
-    Route::resource('product', ProductController::class);
-    Route::resource('customers', StoreController::class);
+    Route::prefix('{store}')->group(function () {{
+        Route::resource('product', ProductController::class);
+        Route::resource('customers', CustomersController::class);
+    }});
     Route::resource('store', StoreController::class);
 });
