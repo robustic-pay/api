@@ -2,8 +2,12 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 
+use App\Models\Scopes\StoreScope;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Attributes\ScopedBy;
+
+#[ScopedBy([StoreScope::class])]
 class Store extends Model
 {
     protected $fillable = ['name'];
