@@ -7,11 +7,9 @@ use App\Http\Controllers\StoreController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CustomersController;
 
-
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
-
 
 Route::post('/tokens/create/{id}', function (Request $request, int $id) {
     $user = User::find($id);
@@ -28,4 +26,5 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::resource('customers', CustomersController::class);
     }});
     Route::resource('store', StoreController::class);
+
 });

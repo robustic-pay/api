@@ -2,8 +2,6 @@
 
 namespace App\Models\Scopes;
 
-
-
 use Illuminate\Support\Facades\Auth;
 use App\Exceptions\NotFoundException;
 use Illuminate\Database\Eloquent\Model;
@@ -24,5 +22,6 @@ class StoreScope implements Scope
                           ->where('user_id', $user->id);
                 });
             }
+
     }
 }
