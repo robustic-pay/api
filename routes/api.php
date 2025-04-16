@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StoreController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\CustomersController;
 
 Route::get('/user', function (Request $request) {
@@ -24,7 +25,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::prefix('{store}')->group(function () {{
         Route::resource('product', ProductController::class);
         Route::resource('customers', CustomersController::class);
+        Route::resource('payment', PaymentController::class);
     }});
     Route::resource('store', StoreController::class);
-
 });
