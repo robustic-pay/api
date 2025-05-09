@@ -22,15 +22,15 @@ class UpdateCustomersRequest extends FormRequest
     public function rules(): array
     {
         return [
-                "name" => "string|max:255",
-                "email" => "email|max:255",
-                "phone" => "string|max:255",
-                "birthday" => "date|nullable",
-                "address" => "string|max:255",
-                "city" => "string|max:255",
-                "state" => "string|max:255",
-                "country" => "string|max:255",
-                "zip" => "string|max:255",
+            'name' => 'string|max:255',
+            'email' => 'email|max:255',
+            'phone' => 'string|max:255',
+            'birthday' => 'date|nullable',
+            'address' => 'string|max:255',
+            'city' => 'string|max:255',
+            'state' => 'string|max:255',
+            'country' => 'string|max:255',
+            'zip' => 'string|max:255',
         ];
     }
 }

@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Store;
-use App\Models\Customers;
-use Illuminate\Support\Facades\Gate;
 use App\Http\Requests\StoreCustomersRequest;
 use App\Http\Requests\UpdateCustomersRequest;
+use App\Models\Customers;
+use App\Models\Store;
+use Illuminate\Support\Facades\Gate;
 
 class CustomersController extends Controller
 {
@@ -16,15 +16,17 @@ class CustomersController extends Controller
     public function index(Store $store)
     {
         $customer = Customers::where('store_id', $store->id)->paginate();
+
         return response()->json($customer, 200);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreCustomersRequest $request, Store $store) 
+    public function store(StoreCustomersRequest $request, Store $store)
     {
         $customer = Customers::createForStore($request->validated(), $store->id);
+
         return response()->json($customer, 201);
     }
 
@@ -34,6 +36,7 @@ class CustomersController extends Controller
     public function show(Store $store, Customers $customer)
     {
         Gate::authorize('access', [$customer, $store]);
+
         return response()->json($customer, 200);
     }
 
@@ -44,6 +47,7 @@ class CustomersController extends Controller
     {
         Gate::authorize('access', [$customer, $store]);
         $customer->update($request->validated());
+
         return response()->json($customer, 200);
     }
 
@@ -54,6 +58,7 @@ class CustomersController extends Controller
     {
         Gate::authorize('access', [$customer, $store]);
         $customer->delete();
+
         return response()->json(['message' => 'Customer successfully deleted.'], 200);
     }
 }

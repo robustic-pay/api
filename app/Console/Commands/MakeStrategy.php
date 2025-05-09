@@ -31,6 +31,7 @@ class MakeStrategy extends Command
 
         if (file_exists($path)) {
             $this->error("The {$name} strategy already exists!");
+
             return;
         }
 

@@ -31,6 +31,7 @@ class MakeService extends Command
 
         if (file_exists($path)) {
             $this->error("The {$name} service already exists!");
+
             return;
         }
 

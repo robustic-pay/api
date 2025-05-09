@@ -2,8 +2,8 @@
 
 namespace App\Strategy\Payment;
 
-use App\Strategy\PaymentStrategy;
 use App\Interfaces\Payment\PixPaymentInterface;
+use App\Strategy\PaymentStrategy;
 
 class PixPaymentStrategy implements PaymentStrategy
 {
@@ -12,8 +12,5 @@ class PixPaymentStrategy implements PaymentStrategy
         //
     }
 
-    public function pay() 
-    {
-
-    }
+    public function pay() {}
 }

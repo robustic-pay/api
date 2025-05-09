@@ -2,11 +2,9 @@
 
 namespace App\Policies;
 
-use App\Models\User;
-use App\Models\Store;
 use App\Models\Customers;
-use Illuminate\Auth\Access\Response;
-
+use App\Models\Store;
+use App\Models\User;
 
 class CustomerPolicy
 {

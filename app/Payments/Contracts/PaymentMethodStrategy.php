@@ -2,7 +2,7 @@
 
 namespace App\Contracts;
 
-interface PaymentMethodStrategy 
+interface PaymentMethodStrategy
 {
-    public function charge(array $payload) : array;
+    public function charge(array $payload): array;
 }

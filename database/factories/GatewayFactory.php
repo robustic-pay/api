@@ -2,7 +2,6 @@
 
 namespace Database\Factories;
 
-use App\Enums\Gateway;
 use App\Gateways\MercadoPagoGateway;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -19,7 +18,7 @@ class GatewayFactory extends Factory
     public function definition()
     {
         return match ($data) {
-            "mercado_pago" => new MercadoPagoGateway()
+            'mercado_pago' => new MercadoPagoGateway
         };
     }
 }

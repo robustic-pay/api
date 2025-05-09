@@ -2,7 +2,4 @@
 
 namespace App\Interfaces;
 
-interface PaymentGatewayInterface 
-{
-    
-}
+interface PaymentGatewayInterface {}

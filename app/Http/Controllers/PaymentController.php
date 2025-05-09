@@ -3,13 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Store;
-use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use MercadoPago\MercadoPagoConfig;
-use MercadoPago\Client\Order\OrderClient;
-use MercadoPago\Exceptions\MPApiException;
-use MercadoPago\Client\Common\RequestOptions;
-use MercadoPago\Client\Payment\PaymentClient;
 
 class PaymentController extends Controller
 {

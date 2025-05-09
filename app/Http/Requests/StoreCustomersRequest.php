@@ -22,15 +22,15 @@ class StoreCustomersRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "name" => "required|string|max:255",
-            "email" => "required|email|max:255",
-            "phone" => "required|string|max:255",
-            "birthday" => "date|nullable",
-            "address" => "string|max:255",
-            "city" => "string|max:255",
-            "state" => "string|max:255",
-            "country" => "string|max:255",
-            "zip" => "string|max:255",
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'phone' => 'required|string|max:255',
+            'birthday' => 'date|nullable',
+            'address' => 'string|max:255',
+            'city' => 'string|max:255',
+            'state' => 'string|max:255',
+            'country' => 'string|max:255',
+            'zip' => 'string|max:255',
         ];
     }
 }
